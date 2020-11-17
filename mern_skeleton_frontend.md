@@ -97,3 +97,47 @@ This is the **React component tree diagram** which shows all the React component
 | -- webpack.config.client.production.js
 
 ## Setting up for React Development
+
+We need to add **configuration to compile and bundle the frontend code**, add the **React-related dependencies** that are necessary to build the interactive interface, and tie this all together in the MERN development flow.
+
+To achieve this, we will add **frontend configuration** for **Babel, Webpack, and React Hot Loader** to **compile, bundle, and hot reload the code**. Next, we will modify the server code to initiate code bundling for both the frontend and backend in one command to make the development flow simple. Then, we will update the code further so that it serves the bundled code from the server when the application runs in the browser. Finally, we will finish setting up by installing the React dependencies that are necessary to start implementing the frontend.
+
+###### Configuring Babel and Webpack
+
+We will update **Babel & Webpack** to compile and bundle the React code to implement frontend. We will then configure the **Express app** to initiate frontend and backend code bundling in one command, so that just startinf the server during development gets the complete stack ready for running and testing.
+
+* Babel
+
+**npm install @babel/preset-react --save-dev** - To **compile React**, install the **Babel React preset module** as a development dependency.
+
+**npm install react react-dom --save**
+
+**.babelrc** - This will include the **module** and also configure the **react-hot-loader** Babel plugin as required for the **react-hot-loader** module.
+
+```
+{
+    "presets": [
+      ["@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
+    ]
+}
+```
+
+* Webpack
+
+To bundle client-side code after compiling it with Babel, and also to enable **react-hot-loader** for faster development, we need modules:
+
+**npm install webpack-dev-middleware webpack-hot-middleware file-loader --save-dev**
+
+**npm install react-hot-loader @hot-loader/react-dom --save**
+
+**webpack.config.client.js** - for frontend development
