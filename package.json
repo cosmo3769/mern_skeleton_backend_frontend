@@ -20,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.12.5",
     "babel-loader": "^8.1.0",
     "nodemon": "^2.0.4",
     "webpack": "^4.44.2",
@@ -27,6 +28,7 @@
     "webpack-node-externals": "^2.5.2"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "^17.0.0",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
@@ -36,6 +38,9 @@
     "helmet": "^4.1.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
-    "mongoose": "^5.10.9"
+    "mongoose": "^5.10.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0"
   }
 }
